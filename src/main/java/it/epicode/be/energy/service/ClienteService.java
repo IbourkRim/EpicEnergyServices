@@ -30,6 +30,7 @@ public class ClienteService {
 		if (clienteResult.isPresent()) {
 			Cliente clienteUpdate = clienteResult.get();
 			clienteUpdate.setRagioneSociale(cliente.getRagioneSociale());
+			clienteUpdate.setTipoCliente(cliente.getTipoCliente());
 			clienteUpdate.setPartitaIva(cliente.getPartitaIva());
 			clienteUpdate.setEmail(cliente.getEmail());
 			clienteUpdate.setDataInserimento(cliente.getDataInserimento());
@@ -41,6 +42,8 @@ public class ClienteService {
 			clienteUpdate.setNomeContatto(cliente.getNomeContatto());
 			clienteUpdate.setCognomeContatto(cliente.getCognomeContatto());
 			clienteUpdate.setTelefonoContatto(cliente.getTelefonoContatto());
+			clienteUpdate.setIndirizzoSedeLegale(cliente.getIndirizzoSedeLegale());
+			clienteUpdate.setIndirizzoSedeOperativa(cliente.getIndirizzoSedeOperativa());
 			return clienteRepo.save(clienteUpdate);
 			
 		}else {
