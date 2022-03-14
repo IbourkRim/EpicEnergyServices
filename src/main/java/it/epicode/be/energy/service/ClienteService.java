@@ -37,6 +37,10 @@ public class ClienteService {
 			clienteUpdate.setFatturatoAnnuale(cliente.getFatturatoAnnuale());
 			clienteUpdate.setPec(cliente.getPec());
 			clienteUpdate.setTelefono(cliente.getTelefono());
+			clienteUpdate.setEmailContatto(cliente.getEmailContatto());
+			clienteUpdate.setNomeContatto(cliente.getNomeContatto());
+			clienteUpdate.setCognomeContatto(cliente.getCognomeContatto());
+			clienteUpdate.setTelefonoContatto(cliente.getTelefonoContatto());
 			return clienteRepo.save(clienteUpdate);
 			
 		}else {

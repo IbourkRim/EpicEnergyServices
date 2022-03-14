@@ -32,7 +32,7 @@ public class IndirizzoService {
 			Indirizzo indirizzoUpdate = indirizzoResult.get();
 			indirizzoUpdate.setVia(indirizzo.getVia());
 			indirizzoUpdate.setCivico(indirizzo.getCivico());
-			indirizzoUpdate.setLocalità(indirizzo.getLocalità());
+			indirizzoUpdate.setLocalita(indirizzo.getLocalita());
 			indirizzoUpdate.setCap(indirizzo.getCap());
 			return indirizzoRepo.save(indirizzoUpdate);
 			

@@ -2,6 +2,8 @@ package it.epicode.be.energy.model;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,19 +43,19 @@ public class Cliente {
 	private String cognomeContatto;
 	private Integer telefonoContatto;
 	
-	@OneToOne
+	@OneToOne//(cascade = CascadeType.ALL)
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Indirizzo indirizzoSedeLegale;
 	
-	@OneToOne
+	@OneToOne//(cascade = CascadeType.ALL)
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Indirizzo indirizzoSedeOperativa;
 	
-	@OneToMany//(mappedBy = "cliente")
+	/*@OneToMany//(cascade = CascadeType.ALL)
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-	private List<Fattura> fatture;
+	private List<Fattura> fatture;*/
 	
-	/*public String formattaIndirizzo() {
+	public String formattaIndirizzo() {
 		return indirizzoSedeLegale.getLocalita()+"-"+indirizzoSedeLegale.getVia();
-	}*/
+	}
 }

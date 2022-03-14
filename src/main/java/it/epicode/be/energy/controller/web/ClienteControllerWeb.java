@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import it.epicode.be.energy.model.Cliente;
 import it.epicode.be.energy.service.ClienteService;
+import it.epicode.be.energy.service.IndirizzoService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -26,9 +27,9 @@ public class ClienteControllerWeb {
 	@Autowired
 	ClienteService clienteService;
 	
-	/*@Autowired
-	CorsoDiLaureaService corsoService;*/
-
+	@Autowired
+	IndirizzoService indirizzoService;
+	
 	@GetMapping("/clienti/mostraelenco")
 	public ModelAndView mostraElencoClienti() {
 		log.info("Test elenco clienti su pagina Thymeleaf");
@@ -38,10 +39,10 @@ public class ClienteControllerWeb {
 		return view;
 	}
 
-	/*@GetMapping("/mostraformaggiungi")
+	@GetMapping("/cliente/mostraformaggiungi")
 	public String mostraFormAggiungi(Cliente cliente, Model model) {
 		log.info("Test form aggiungi cliente");
-		model.addAttribute("listaCorsi", clienteService.findAll());
+		model.addAttribute("listaIndirizzi", indirizzoService.findAll());
 		return "formCliente";
 	}
 
@@ -49,21 +50,21 @@ public class ClienteControllerWeb {
 	public String aggiungiCliente(@Valid Cliente cliente, BindingResult result, Model model) {
 		log.info("aggiungi cliente");
 		if(result.hasErrors()) {
-			model.addAttribute("listaCorsi", clienteService.findAll());
+			model.addAttribute("listaIndirizzi", clienteService.findAll());
 			return "addCliente";
 		}
 		clienteService.save(cliente);
-		return "redirect:/web/mostraelenco";
+		return "redirect:/web/clienti/mostraelenco";
 	}
 
-	@GetMapping("/mostraformaggiorna/{id}")
+	@GetMapping("/cliente/mostraformaggiorna/{id}")
 	public ModelAndView mostraFormAggiorna(@PathVariable Long id, Model model) {
 	log.info("Test mostra form aggiorna cliente");
 	Optional<Cliente> clienteTemp =  clienteService.findById(id);
 	if(clienteTemp.isPresent()) {
 		ModelAndView view = new ModelAndView("editCliente");
 		view.addObject("cliente", clienteTemp.get());
-		view.addObject("listaCorsi", corsoService.findAll());
+		view.addObject("listaIndirizzi", indirizzoService.findAll());
 		return view;
 	}
 	
@@ -92,5 +93,5 @@ public class ClienteControllerWeb {
 			return new ModelAndView("error").addObject("message", "id non trovato");
 		}
 		
-	}*/
+	}
 }

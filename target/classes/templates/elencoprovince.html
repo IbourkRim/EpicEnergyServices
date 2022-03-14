@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Epic Energy Services - Lista province</title>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{/css/layout.css}"/>
+</head>
+<body>
+<div class="header-menu">Epic Energy Services</div>
+<div class="header-section">Elenco province</div>
+ <div th:switch="${listaProvince.size()}">
+   <div class="no-item-found" th:case="0">Nessuna provincia trovata!</div>
+   <!-- * for default case -->
+   <div th:case="*">
+   <table width="100%">
+     <thead>
+        <tr>
+        	<th class="header">Nome</th>
+        	<th class="header">Regione</th>
+        	<th class="header">Sigla</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr th:each="provincia : ${listaProvince}">
+               <td th:text="${provincia.nome}"></td>
+               <td th:text="${provincia.regione}"></td>
+               <td th:text="${provincia.sigla}"></td>
+            	<!--<td><a th:href="@{/web/provincia/mostraformaggiorna/{id}(id=${provincia.id})}">Aggiorna</i></a></td>-->
+            </tr>
+       </tbody>
+   </table>
+ <!-- <div class="link-add"><a href="/web/mostraformaggiungi">Aggiungi provincia</a></div>
+  </div>
+    <div class="link-home"><a href="/">Torna alla Home</a></div>
+    <div class="footer">Powered by Epicode School</div>-->
+</body>
+</html>

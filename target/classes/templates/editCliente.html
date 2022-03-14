@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Modifica cliente</title>
+</head>
+<body>
+<h1>Modifica i dettagli del cliente</h1>
+	<form action="#" th:action="@{/web/aggiornaCliente/{id}(id=${cliente.id})}" th:object="${cliente}" 
+	method="post">
+	
+	<p>
+		Ragione Sociale: <input type="text" th:field="*{ragioneSociale}" />
+	</p>
+	
+	<p>
+		Tipo Cliente: <input type="text" th:field="*{tipoCliente}" />
+	</p>
+	
+	<p>
+		Partita Iva: <input type="text" th:field="*{partitaIva}" />
+	</p>
+	
+	
+	<p>
+		Email: <input type="email" th:field="*{email}" />
+	</p>
+	
+	<p>
+		Data d'inserimento: <input type="date" pattern="yyyy-MM-dd" th:field="*{dataInserimento}" />
+	</p>
+	
+	<p>
+		Data ultimo contatto: <input type="date" pattern="yyyy-MM-dd" th:field="*{dataUltimoContatto}" />
+	</p>
+	
+	<p>
+		Fatturato Annuale: <input type="text" th:field="*{fatturatoAnnuale}" />
+	</p>
+	
+	<p>
+		Pec: <input type="text" th:field="*{pec}" />
+	</p>
+	
+	<p>
+		Telefono: <input type="text" th:field="*{telefono}" />
+	</p>
+	
+	<p>
+		Email Contatto: <input type="email" th:field="*{emailContatto}" />
+	</p>
+	
+	<p>
+		Nome Contatto: <input type="text" th:field="*{nomeContatto}" />
+	</p>
+	
+	<p>
+		Cognome Contatto: <input type="text" th:field="*{cognomeContatto}" />
+	</p>
+	
+	<p>
+		Telefono Contatto: <input type="text" th:field="*{telefonoContatto}" />
+	</p><br>
+	
+	<!--  <label >Corso:</label>
+	<select th:field="*{corso}">
+  <option  th:value="fisica" th:text="fisica">Fisica</option>
+  <option  th:value="lettere" th:text="lettere">Lettere</option>
+  <option  th:value="chimica" th:text="chimica">Chimica</option>
+   </select> -->
+   
+  <!-- <select th:object="${studente}"  th:field="*{corsoDiLaurea}" name="corso">
+	<option th:each="c : ${listaCorsi}"
+    th:value="${c.id}"
+    th:text="${c.nome}" />
+    </select>-->
+  
+ <!-- <select name="corso" id="corso" required>
+  <option  value="fisica">Fisica</option>
+  <option  value="lettere">Lettere</option>
+  <option  value="chimica">Chimica</option>
+   </select> -->
+	
+	<p>
+		<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+	</p>
+	
+	
+</form>
+</body>
+</html>

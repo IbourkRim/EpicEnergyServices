@@ -2,6 +2,7 @@ package it.epicode.be.energy.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,14 +30,14 @@ public class Indirizzo {
 	private Long id;
 	private String via;
 	private Integer civico;
-	private String località;
+	private String localita;
 	private Integer cap;
 
 	/*@ManyToOne
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Cliente cliente;*/
 
-	@ManyToOne
+	@ManyToOne//(cascade = CascadeType.ALL)
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Comune comune;
 }
