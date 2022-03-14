@@ -32,6 +32,7 @@ public class ApplicationRunner implements CommandLineRunner{
     @Autowired
     ProvinciaService provinciaService;
 
+    //commento
     @Override
     public void run(String... args) throws Exception {
         caricaProvince();
