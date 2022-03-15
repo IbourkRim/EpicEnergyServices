@@ -7,14 +7,16 @@ body {
 	padding: 10px 10px;
 	text-align: center;
 	font-size: 32px;
-	background-color: #7B68EE;
+	background-color: #ccb4ff;
 	font-family: "Times New Roman", Times, serif;
+	color: white;
+  	text-shadow: 2px 2px 4px #000000;
 }
 
 .header {
 	font-size: 18px;
 	text-align: left;
-	color: #7B68EE;
+	color: #ccb4ff;
 	font-family: "Times New Roman", Times, serif;
 }
 
@@ -69,8 +71,10 @@ body {
 
 
 .footer {
-	background: #acb3b9;
+	background: #ccb4ff;
 	text-align: center;
 	padding: 15px;
 	font-family: "Times New Roman", Times, serif;
+	color: white;
+  	text-shadow: 2px 2px 4px #000000;
 }
