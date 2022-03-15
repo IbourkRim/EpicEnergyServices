@@ -9,26 +9,27 @@
 <div class="header-menu">Epic Energy Services</div>
 <div class="header-section">Elenco comuni</div>
  <div th:switch="${listaComuni.size()}">
-   <div class="no-item-found" th:case="0">Nessuno comune trovato!</div>
+   <div class="no-item-found" th:case="0">Nessun comune e stato trovato!</div>
    <!-- * for default case -->
    <div th:case="*">
    <table width="100%">
+     
      <thead>
         <tr>
-        	
         	<th class="header">Nome</th>
         	<th class="header">Provincia</th>
-        	
         </tr>
       </thead>
+      
       <tbody>
             <tr th:each="comune : ${listaComuni}">
-              <!-- <td th:text="${comune.id}"></td>-->
                	<td th:text="${comune.nome}"></td>
   				<td th:text="${comune.provincia.nome}"></td>
-            	<!-- <td><a th:href="@{/web/mostraformaggiorna/{id}(id=${studente.id})}">Aggiorna</i></a></td>-->
             </tr>
        </tbody>
    </table>
+ 	</div>
+    <div class="link-home"><a href="http://localhost:8080/web/epicenergy">Torna alla Home</a></div>
+    <div class="footer">By Rim</div>
 </body>
 </html>

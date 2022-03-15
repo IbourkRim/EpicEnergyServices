@@ -54,6 +54,7 @@ body {
 .link-home {
 	text-align: center;
 	padding: 15px;
+	font-family: "Times New Roman", Times, serif;
 }
 
 .link-add {
@@ -71,4 +72,5 @@ body {
 	background: #acb3b9;
 	text-align: center;
 	padding: 15px;
+	font-family: "Times New Roman", Times, serif;
 }

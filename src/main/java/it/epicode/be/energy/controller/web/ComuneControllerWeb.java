@@ -28,6 +28,11 @@ public class ComuneControllerWeb {
 	@Autowired
 	ProvinciaService provinciaService;
 
+	@GetMapping("/epicenergy")
+	public String showView(Model model) {
+		return "pagprincipale";
+	}
+	
 	@GetMapping("/comuni/mostraelenco")
 	public ModelAndView mostraElencoComuni() {
 		log.info("Test elenco comuni su pagina Thymeleaf");

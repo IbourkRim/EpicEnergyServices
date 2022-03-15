@@ -26,8 +26,7 @@ public class ProvinciaControllerWeb {
 	
 	@Autowired
 	IndirizzoService indirizzoService;
-	/*@Autowired
-	CorsoDiLaureaService corsoService;*/
+	
 
 	@GetMapping("/province/mostraelenco")
 	public ModelAndView mostraElencoProvince() {
