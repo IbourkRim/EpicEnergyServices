@@ -28,8 +28,10 @@ public class Fattura {
 	private Date data;
 	private BigDecimal importo;
 	private Integer numero;
+	private String statoFattura;
 	
-	@ManyToOne //(cascade = CascadeType.ALL)
+	/*@ManyToOne//(cascade = CascadeType.PERSIST)
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-	private Cliente cliente;
+	private Cliente cliente;*/
+	
 }

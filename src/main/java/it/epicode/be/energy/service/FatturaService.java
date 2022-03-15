@@ -33,6 +33,7 @@ public class FatturaService {
 			fatturaUpdate.setData(fattura.getData());
 			fatturaUpdate.setImporto(fattura.getImporto());
 			fatturaUpdate.setNumero(fattura.getNumero());
+			fatturaUpdate.setStatoFattura(fattura.getStatoFattura());
 			return fatturaRepo.save(fatturaUpdate);
 			
 		}else {

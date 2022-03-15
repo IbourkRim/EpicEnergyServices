@@ -44,6 +44,7 @@ public class ClienteService {
 			clienteUpdate.setTelefonoContatto(cliente.getTelefonoContatto());
 			clienteUpdate.setIndirizzoSedeLegale(cliente.getIndirizzoSedeLegale());
 			clienteUpdate.setIndirizzoSedeOperativa(cliente.getIndirizzoSedeOperativa());
+			clienteUpdate.setFatture(cliente.getFatture());
 			return clienteRepo.save(clienteUpdate);
 			
 		}else {

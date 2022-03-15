@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,6 +30,7 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String ragioneSociale;
+	@Enumerated(EnumType.STRING)
 	private TipoCliente tipoCliente;
 	private Integer partitaIva;
 	private String email;
@@ -51,9 +54,9 @@ public class Cliente {
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Indirizzo indirizzoSedeOperativa;
 	
-	/*@OneToMany//(cascade = CascadeType.ALL)
+	@OneToMany//(cascade = CascadeType.PERSIST)
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-	private List<Fattura> fatture;*/
+	private List<Fattura> fatture;
 	
 	public String formattaIndirizzo() {
 		return indirizzoSedeLegale.getLocalita()+"-"+indirizzoSedeLegale.getVia();
