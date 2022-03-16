@@ -24,36 +24,37 @@ public class AddUserSpringRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
+		if (userRepository.findAll().isEmpty()) {
+			Role roleA = new Role();
+			roleA.setRoleName(Roles.ROLE_ADMIN);
+			roleRepository.save(roleA);
 
-		Role roleA = new Role();
-		roleA.setRoleName(Roles.ROLE_ADMIN);
-		roleRepository.save(roleA);
+			Role roleU = new Role();
+			roleU.setRoleName(Roles.ROLE_USER);
+			roleRepository.save(roleU);
 
-		Role roleU = new Role();
-		roleU.setRoleName(Roles.ROLE_USER);
-		roleRepository.save(roleU);
+			User userA = new User();
+			userA.setUserName("admin");
+			userA.setPassword(bCrypt.encode("admin"));
+			userA.setEmail("admin@domain.com");
+			userA.setActive(true);
+			Set<Role> rolesA = new HashSet<>();
+			rolesA.add(roleA);
+			rolesA.add(roleU);
+			userA.setRoles(rolesA);
+			userRepository.save(userA);
 
-		User userA = new User();
-		userA.setUserName("admin");
-		userA.setPassword(bCrypt.encode("admin"));
-		userA.setEmail("admin@domain.com");
-		userA.setActive(true);
-		Set<Role> rolesA = new HashSet<>();
-		rolesA.add(roleA);
-		rolesA.add(roleU);
-		userA.setRoles(rolesA);
-		userRepository.save(userA);
+			User userU = new User();
+			userU.setUserName("user");
+			userU.setPassword(bCrypt.encode("user"));
+			userU.setEmail("user@domain.com");
+			userU.setActive(true);
+			Set<Role> rolesU = new HashSet<>();
+			rolesU.add(roleU);
+			userU.setRoles(rolesU);
+			userRepository.save(userU);
 
-		User userU = new User();
-		userU.setUserName("user");
-		userU.setPassword(bCrypt.encode("user"));
-		userU.setEmail("user@domain.com");
-		userU.setActive(true);
-		Set<Role> rolesU = new HashSet<>();
-		rolesU.add(roleU);
-		userU.setRoles(rolesU);
-		userRepository.save(userU);
-
+		}
 	}
 
 }

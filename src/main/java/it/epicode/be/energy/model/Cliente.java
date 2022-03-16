@@ -54,7 +54,7 @@ public class Cliente {
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Indirizzo indirizzoSedeOperativa;
 	
-	@OneToMany//(cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "cliente")
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private List<Fattura> fatture;
 	

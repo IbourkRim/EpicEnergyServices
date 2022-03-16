@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -30,8 +31,8 @@ public class Fattura {
 	private Integer numero;
 	private String statoFattura;
 	
-	/*@ManyToOne//(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-	private Cliente cliente;*/
+	private Cliente cliente;
 	
 }

@@ -35,9 +35,10 @@ public class ApplicationRunner implements CommandLineRunner{
     //commento
     @Override
     public void run(String... args) throws Exception {
-        caricaProvince();
+       if(provinciaService.findAll().isEmpty()) {
+    	caricaProvince();
         caricaComuni();
-            
+       }     
     }
 
     

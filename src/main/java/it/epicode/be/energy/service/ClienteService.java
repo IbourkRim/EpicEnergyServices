@@ -1,5 +1,7 @@
 package it.epicode.be.energy.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,4 +65,40 @@ public class ClienteService {
 	public Optional<Cliente> findById(Long id) {
 		return clienteRepo.findById(id);
 	}
+
+	/*public Page<Optional<Cliente>> findByOrderByRagioneSociale(Pageable pageable){
+		return clienteRepo.findByOrderByRagioneSociale(pageable);
+	}
+
+	public Page<Optional<Cliente>> findByOrderByFatturatoAnnuale(Pageable pageable){
+		return clienteRepo.findByOrderByFatturatoAnnuale(pageable);
+	}
+
+	public Page<Optional<Cliente>> findByOrderByDataInserimento(Pageable pageable){
+		return clienteRepo.findByOrderByDataInserimento(pageable);
+	}
+
+	public Page<Optional<Cliente>> findByOrderByDataUltimoContatto(Pageable pageable){
+		return clienteRepo.findByOrderByDataUltimoContatto(pageable);
+	}
+
+	public Page<Optional<Cliente>> findByOrderByIndirizzoSedeLegaleComuneProvincia(Pageable pageable){
+		return clienteRepo.findByOrderByIndirizzoSedeLegaleComuneProvincia(pageable);
+	}
+
+	public Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double minimo , Double massimo){
+		return clienteRepo.findByFatturatoAnnuale(pageable, minimo, massimo);
+	}
+
+	public Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento){
+		return clienteRepo.findByDataInserimento(pageable, dataInserimento);
+	}
+
+	public Page<Optional<Cliente>> findByDataUltimoContatto(Pageable pageable, LocalDate dataUltimoContatto){
+		return clienteRepo.findByDataUltimoContatto(pageable, dataUltimoContatto);
+	}
+
+	public Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale){
+		return clienteRepo.findByRagioneSociale(pageable, ragioneSociale);
+	}*/
 }
