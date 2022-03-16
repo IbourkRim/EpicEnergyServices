@@ -1,5 +1,6 @@
 package it.epicode.be.energy.service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -64,4 +65,18 @@ public class FatturaService {
 	public Page<Optional<Fattura>> findByStatoFattura(Pageable pageable, String statoFattura) {
 		return fatturaRepo.findByStatoFattura(pageable, statoFattura);
 	}
+
+	public Page<Optional<Fattura>> findByAnno(Pageable pageable, String anno){
+		return fatturaRepo.findByAnno(pageable, anno);
+	}
+	
+	public Page<Optional<Fattura>> findByImporto(Pageable pageable, BigDecimal minimo , BigDecimal massimo) {
+		return fatturaRepo.findByImporto(pageable, minimo, massimo);
+	}
+	
+	/*public Page<Optional<Fattura>> findByCliente(Pageable pageable, String cliente) {
+		return fatturaRepo.findByCliente(pageable, cliente);
+	}*/
+	
+
 }

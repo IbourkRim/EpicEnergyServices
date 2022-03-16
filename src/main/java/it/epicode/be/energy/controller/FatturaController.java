@@ -1,5 +1,6 @@
 package it.epicode.be.energy.controller;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Optional;
@@ -103,4 +104,42 @@ public class FatturaController {
                return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
            }	
     }
+
+	@GetMapping(path = "/fattura/byanno/{anno}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    public ResponseEntity <Page<Optional<Fattura>>> findByAnno(@PathVariable String anno, Pageable pageable) {
+   	 Page<Optional<Fattura>> findByAnno = fatturaService.findByAnno(pageable, anno);
+
+         if (findByAnno.hasContent()) { 
+               return new ResponseEntity<>(findByAnno, HttpStatus.OK);
+           } else {
+               return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+           }	
+    }
+	
+	@GetMapping(path = "/fattura/importo/{minimo}/{massimo}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    public ResponseEntity <Page<Optional<Fattura>>> findByImporto(@PathVariable BigDecimal minimo , @PathVariable BigDecimal massimo ,Pageable pageable) {
+        Page<Optional<Fattura>> findByImporto = fatturaService.findByImporto(pageable,minimo, massimo);
+
+        if (findByImporto.hasContent()) { 
+            return new ResponseEntity<>(findByImporto, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+
+    }
+	
+	/*@GetMapping(path = "/fattura/bycliente/{cliente}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    public ResponseEntity <Page<Optional<Fattura>>> findByCliente(@PathVariable String cliente, Pageable pageable) {
+   	 Page<Optional<Fattura>> findByCliente = fatturaService.findByCliente(pageable, cliente);
+
+         if (findByCliente.hasContent()) { 
+               return new ResponseEntity<>(findByCliente, HttpStatus.OK);
+           } else {
+               return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+           }	
+    }*/
+
 }

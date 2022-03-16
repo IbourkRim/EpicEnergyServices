@@ -29,7 +29,7 @@ public class Fattura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Integer anno;
+	private String anno;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate data;
 	private BigDecimal importo;
