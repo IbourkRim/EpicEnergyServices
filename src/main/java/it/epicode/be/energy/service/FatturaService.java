@@ -74,9 +74,9 @@ public class FatturaService {
 		return fatturaRepo.findByImporto(pageable, minimo, massimo);
 	}
 	
-	/*public Page<Optional<Fattura>> findByCliente(Pageable pageable, String cliente) {
-		return fatturaRepo.findByCliente(pageable, cliente);
-	}*/
+	public Page<Optional<Fattura>> findByClienteRagioneSociale(Pageable pageable, String ragioneSociale) {
+		return fatturaRepo.findByClienteRagioneSociale(pageable, ragioneSociale);
+	}
 	
 
 }

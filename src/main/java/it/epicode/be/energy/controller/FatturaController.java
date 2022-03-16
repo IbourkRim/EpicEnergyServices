@@ -130,16 +130,16 @@ public class FatturaController {
 
     }
 	
-	/*@GetMapping(path = "/fattura/bycliente/{cliente}")
+	@GetMapping(path = "/fattura/byclienteragionesociale/{ragioneSociale}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-    public ResponseEntity <Page<Optional<Fattura>>> findByCliente(@PathVariable String cliente, Pageable pageable) {
-   	 Page<Optional<Fattura>> findByCliente = fatturaService.findByCliente(pageable, cliente);
+    public ResponseEntity <Page<Optional<Fattura>>> findByClienteRagioneSociale(@PathVariable String ragioneSociale, Pageable pageable) {
+   	 Page<Optional<Fattura>> findByClienteRagioneSociale = fatturaService.findByClienteRagioneSociale(pageable, ragioneSociale);
 
-         if (findByCliente.hasContent()) { 
-               return new ResponseEntity<>(findByCliente, HttpStatus.OK);
+         if (findByClienteRagioneSociale.hasContent()) { 
+               return new ResponseEntity<>(findByClienteRagioneSociale, HttpStatus.OK);
            } else {
                return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
            }	
-    }*/
+    }
 
 }

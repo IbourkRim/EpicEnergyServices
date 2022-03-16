@@ -24,5 +24,5 @@ public interface FatturaRepository extends JpaRepository<Fattura,Long>{
 	@Query("SELECT f FROM Fattura f WHERE f.importo>=:minimo AND f.importo<=:massimo")
     Page<Optional<Fattura>> findByImporto(Pageable pageable, BigDecimal minimo , BigDecimal massimo);
 	
-	//Page<Optional<Fattura>> findByCliente(Pageable pageable, String cliente);
+	Page<Optional<Fattura>> findByClienteRagioneSociale(Pageable pageable, String ragioneSociale);
 }
