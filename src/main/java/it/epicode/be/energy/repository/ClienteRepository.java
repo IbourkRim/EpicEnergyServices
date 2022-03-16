@@ -26,10 +26,10 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query("SELECT c FROM Cliente c WHERE c.fatturatoAnnuale>=:minimo AND c.fatturatoAnnuale<=:massimo")
     Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double minimo , Double massimo);
 
-    /*Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento);
+    Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento);
 
     Page<Optional<Cliente>> findByDataUltimoContatto(Pageable pageable, LocalDate dataUltimoContatto);
 
-    @Query("SELECT c FROM Cliente c WHERE c.ragioneSociale LIKE %:ragioneSociale%")
+    /*@Query("SELECT c FROM Cliente c WHERE c.ragioneSociale LIKE %:ragioneSociale%")
     Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale);*/
 }

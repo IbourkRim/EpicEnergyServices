@@ -151,7 +151,7 @@ public class ClienteController {
 
     }
 
-	/*@GetMapping(path = "/cliente/data/{dataInserimento}")
+	@GetMapping(path = "/cliente/data/{dataInserimento}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity <Page<Optional<Cliente>>> findByDataInserimento(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataInserimento, Pageable pageable) {
         Page<Optional<Cliente>> findByDataInserimento = clienteService.findByDataInserimento(pageable, dataInserimento);
@@ -164,7 +164,7 @@ public class ClienteController {
 
     }
 
-	@GetMapping(path = "/cliente/data/{dataUltimoContatto}")
+	@GetMapping(path = "/cliente/datacontatto/{dataUltimoContatto}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity <Page<Optional<Cliente>>> findByDataUltimoContatto(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataUltimoContatto, Pageable pageable) {
         Page<Optional<Cliente>> findByDataUltimoContatto = clienteService.findByDataUltimoContatto(pageable, dataUltimoContatto);
@@ -177,7 +177,7 @@ public class ClienteController {
 
 	}
     
-     @GetMapping(path = "/cliente/{ragioneSociale}")
+     /*@GetMapping(path = "/cliente/{ragioneSociale}")
      @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
      public ResponseEntity <Page<Optional<Cliente>>> findByRagioneSociale(@PathVariable String ragioneSociale, Pageable pageable) {
     	 Page<Optional<Cliente>> findByRagioneSociale = clienteService.findByRagioneSociale(pageable, ragioneSociale);

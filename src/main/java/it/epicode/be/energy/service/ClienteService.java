@@ -90,7 +90,7 @@ public class ClienteService {
 		return clienteRepo.findByFatturatoAnnuale(pageable, minimo, massimo);
 	}
 
-	/*public Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento){
+	public Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento){
 		return clienteRepo.findByDataInserimento(pageable, dataInserimento);
 	}
 
@@ -98,7 +98,7 @@ public class ClienteService {
 		return clienteRepo.findByDataUltimoContatto(pageable, dataUltimoContatto);
 	}
 
-	public Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale){
+	/*public Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale){
 		return clienteRepo.findByRagioneSociale(pageable, ragioneSociale);
 	}*/
 }
