@@ -138,7 +138,7 @@ public class ClienteController {
 	}
 
 
-	/*@GetMapping(path = "/cliente/fatturatoannuale/{minimo}/{massimo}")
+	@GetMapping(path = "/cliente/fatturatoannuale/{minimo}/{massimo}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity <Page<Optional<Cliente>>> findByFatturatoAnnuale(@PathVariable Double minimo , @PathVariable Double massimo ,Pageable pageable) {
         Page<Optional<Cliente>> findAll = clienteService.findByFatturatoAnnuale(pageable,minimo, massimo);
@@ -151,7 +151,7 @@ public class ClienteController {
 
     }
 
-	@GetMapping(path = "/cliente/data/{dataInserimento}")
+	/*@GetMapping(path = "/cliente/data/{dataInserimento}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity <Page<Optional<Cliente>>> findByDataInserimento(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataInserimento, Pageable pageable) {
         Page<Optional<Cliente>> findByDataInserimento = clienteService.findByDataInserimento(pageable, dataInserimento);

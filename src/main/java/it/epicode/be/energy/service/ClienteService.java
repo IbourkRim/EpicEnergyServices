@@ -86,11 +86,11 @@ public class ClienteService {
 		return clienteRepo.findByOrderByIndirizzoSedeLegaleComuneProvincia(pageable);
 	}
 
-	/*public Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double minimo , Double massimo){
+	public Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double minimo , Double massimo){
 		return clienteRepo.findByFatturatoAnnuale(pageable, minimo, massimo);
 	}
 
-	public Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento){
+	/*public Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento){
 		return clienteRepo.findByDataInserimento(pageable, dataInserimento);
 	}
 
