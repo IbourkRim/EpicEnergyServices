@@ -1,9 +1,12 @@
 package it.epicode.be.energy.controller;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import it.epicode.be.energy.model.Cliente;
 import it.epicode.be.energy.model.Fattura;
 import it.epicode.be.energy.service.FatturaService;
 
@@ -74,4 +78,18 @@ public class FatturaController {
 		return new ResponseEntity<>("Fattura cancellata.", HttpStatus.OK);
 
 	}
+
+	@GetMapping(path = "/fattura/datafattura/{data}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    public ResponseEntity <Page<Optional<Fattura>>> findByData(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate data, Pageable pageable) {
+        Page<Optional<Fattura>> findByData = fatturaService.findByData(pageable, data);
+
+        if (findByData.hasContent()) { 
+            return new ResponseEntity<>(findByData, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+
+	}
+
 }
