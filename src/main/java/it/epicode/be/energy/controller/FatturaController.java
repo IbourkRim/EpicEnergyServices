@@ -92,4 +92,15 @@ public class FatturaController {
 
 	}
 
+	@GetMapping(path = "/fattura/bystatofattura/{statoFattura}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    public ResponseEntity <Page<Optional<Fattura>>> findByStatoFattura(@PathVariable String statoFattura, Pageable pageable) {
+   	 Page<Optional<Fattura>> findByStatoFattura = fatturaService.findByStatoFattura(pageable, statoFattura);
+
+         if (findByStatoFattura.hasContent()) { 
+               return new ResponseEntity<>(findByStatoFattura, HttpStatus.OK);
+           } else {
+               return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+           }	
+    }
 }

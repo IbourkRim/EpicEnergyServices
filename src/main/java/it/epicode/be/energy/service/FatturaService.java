@@ -61,5 +61,7 @@ public class FatturaService {
 		return fatturaRepo.findByData(pageable, data);
 	}
 
-
+	public Page<Optional<Fattura>> findByStatoFattura(Pageable pageable, String statoFattura) {
+		return fatturaRepo.findByStatoFattura(pageable, statoFattura);
+	}
 }
