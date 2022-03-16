@@ -77,7 +77,7 @@ public class ClienteController {
 
 	}
 
-	/*@GetMapping(path = "/cliente/orderragionesociale")
+	@GetMapping(path = "/cliente/orderragionesociale")
 	@PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
 	public ResponseEntity<Page<Optional<Cliente>>> findByOrderByRagioneSociale(Pageable pageable) {
 		Page<Optional<Cliente>> findByOrderByRagioneSociale = clienteService.findByOrderByRagioneSociale(pageable);
@@ -138,7 +138,7 @@ public class ClienteController {
 	}
 
 
-	@GetMapping(path = "/cliente/fatturatoannuale/{minimo}/{massimo}")
+	/*@GetMapping(path = "/cliente/fatturatoannuale/{minimo}/{massimo}")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity <Page<Optional<Cliente>>> findByFatturatoAnnuale(@PathVariable Double minimo , @PathVariable Double massimo ,Pageable pageable) {
         Page<Optional<Cliente>> findAll = clienteService.findByFatturatoAnnuale(pageable,minimo, massimo);

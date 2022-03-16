@@ -66,7 +66,7 @@ public class ClienteService {
 		return clienteRepo.findById(id);
 	}
 
-	/*public Page<Optional<Cliente>> findByOrderByRagioneSociale(Pageable pageable){
+	public Page<Optional<Cliente>> findByOrderByRagioneSociale(Pageable pageable){
 		return clienteRepo.findByOrderByRagioneSociale(pageable);
 	}
 
@@ -86,7 +86,7 @@ public class ClienteService {
 		return clienteRepo.findByOrderByIndirizzoSedeLegaleComuneProvincia(pageable);
 	}
 
-	public Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double minimo , Double massimo){
+	/*public Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double minimo , Double massimo){
 		return clienteRepo.findByFatturatoAnnuale(pageable, minimo, massimo);
 	}
 

@@ -13,7 +13,7 @@ import it.epicode.be.energy.model.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
-	/*Page<Optional<Cliente>> findByOrderByRagioneSociale(Pageable pageable);
+	Page<Optional<Cliente>> findByOrderByRagioneSociale(Pageable pageable);
 
     Page<Optional<Cliente>> findByOrderByFatturatoAnnuale(Pageable pageable);
 
@@ -23,7 +23,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     Page<Optional<Cliente>> findByOrderByIndirizzoSedeLegaleComuneProvincia(Pageable pageable);
 
-    @Query("SELECT c FROM Cliente c WHERE c.fatturatoAnnuale>=:minimo AND c.fatturatoAnnuale<=:massimo")
+    /*@Query("SELECT c FROM Cliente c WHERE c.fatturatoAnnuale>=:minimo AND c.fatturatoAnnuale<=:massimo")
     Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double minimo , Double massimo);
 
     Page<Optional<Cliente>> findByDataInserimento(Pageable pageable, LocalDate dataInserimento);
