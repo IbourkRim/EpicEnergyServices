@@ -98,7 +98,7 @@ public class ClienteService {
 		return clienteRepo.findByDataUltimoContatto(pageable, dataUltimoContatto);
 	}
 
-	/*public Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale){
+	public Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale){
 		return clienteRepo.findByRagioneSociale(pageable, ragioneSociale);
-	}*/
+	}
 }

@@ -30,6 +30,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     Page<Optional<Cliente>> findByDataUltimoContatto(Pageable pageable, LocalDate dataUltimoContatto);
 
-    /*@Query("SELECT c FROM Cliente c WHERE c.ragioneSociale LIKE %:ragioneSociale%")
-    Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale);*/
+    @Query("SELECT c FROM Cliente c WHERE c.ragioneSociale LIKE %:ragioneSociale%")
+    Page<Optional<Cliente>> findByRagioneSociale(Pageable pageable, String ragioneSociale);
 }

@@ -177,7 +177,7 @@ public class ClienteController {
 
 	}
     
-     /*@GetMapping(path = "/cliente/{ragioneSociale}")
+     @GetMapping(path = "/cliente/findbyragione/{ragioneSociale}")
      @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
      public ResponseEntity <Page<Optional<Cliente>>> findByRagioneSociale(@PathVariable String ragioneSociale, Pageable pageable) {
     	 Page<Optional<Cliente>> findByRagioneSociale = clienteService.findByRagioneSociale(pageable, ragioneSociale);
@@ -187,7 +187,7 @@ public class ClienteController {
             } else {
                 return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
             }	
-     }*/
+     }
 	
 	
 
