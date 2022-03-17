@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Email;
+
 import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -30,6 +32,7 @@ public class Cliente {
 	@Enumerated(EnumType.STRING)
 	private TipoCliente tipoCliente;
 	private Integer partitaIva;
+	@Email
 	private String email;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataInserimento;
@@ -38,6 +41,7 @@ public class Cliente {
 	private Double fatturatoAnnuale;
 	private String pec;
 	private Integer telefono;
+	@Email
 	private String emailContatto;
 	private String nomeContatto;
 	private String cognomeContatto;
