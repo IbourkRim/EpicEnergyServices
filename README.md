@@ -63,6 +63,9 @@ prima d'inserire un cliente bisogna inserire due indirizzi senza id:
  }
 }
 
+-per l'update cliente, stesse procedure dell'inserimento
+(aggiornare con indirizzi e fattura già esistenti)
+
 -per accedere alla parte web-
 localhost:8080/web/epicenergy
 
