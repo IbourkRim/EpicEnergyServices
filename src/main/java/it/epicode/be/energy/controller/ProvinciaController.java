@@ -23,6 +23,7 @@ import it.epicode.be.energy.service.ProvinciaService;
 @SecurityRequirement(name = "bearerAuth")
 @RequestMapping("/api")
 public class ProvinciaController {
+	
 	@Autowired
 	private ProvinciaService provinciaService;
 

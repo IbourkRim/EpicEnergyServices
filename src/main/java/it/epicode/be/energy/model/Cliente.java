@@ -2,8 +2,6 @@ package it.epicode.be.energy.model;
 
 import java.time.LocalDate;
 import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
 import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -46,11 +43,11 @@ public class Cliente {
 	private String cognomeContatto;
 	private Integer telefonoContatto;
 	
-	@OneToOne//(cascade = CascadeType.ALL)
+	@OneToOne
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Indirizzo indirizzoSedeLegale;
 	
-	@OneToOne//(cascade = CascadeType.ALL)
+	@OneToOne
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private Indirizzo indirizzoSedeOperativa;
 	
@@ -58,7 +55,4 @@ public class Cliente {
 	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 	private List<Fattura> fatture;
 	
-	public String formattaIndirizzo() {
-		return indirizzoSedeLegale.getLocalita()+"-"+indirizzoSedeLegale.getVia();
-	}
 }

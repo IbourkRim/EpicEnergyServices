@@ -2,7 +2,6 @@ package it.epicode.be.energy.controller;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import it.epicode.be.energy.model.Cliente;
 import it.epicode.be.energy.model.Fattura;
 import it.epicode.be.energy.service.FatturaService;
 

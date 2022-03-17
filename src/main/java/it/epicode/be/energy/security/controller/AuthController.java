@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import it.epicode.be.energy.security.exception.EpicEnergyException;
 import it.epicode.be.energy.security.model.LoginRequest;
 import it.epicode.be.energy.security.model.LoginResponse;
@@ -31,7 +28,6 @@ import it.epicode.be.energy.security.repository.RoleRepository;
 import it.epicode.be.energy.security.repository.UserRepository;
 import it.epicode.be.energy.security.service.UserDetailsImpl;
 import it.epicode.be.energy.security.util.JwtUtils;
-
 
 @RestController
 @RequestMapping("/auth")
@@ -72,7 +68,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@RequestParam RequestRegisterUser registerUser) {
+	public ResponseEntity<?> registerUser(@RequestBody RequestRegisterUser registerUser) {
 		
 		if (userRepository.existsByEmail(registerUser.getEmail())) {
 			return new ResponseEntity<String>("Errore email già in uso!", HttpStatus.BAD_REQUEST);
