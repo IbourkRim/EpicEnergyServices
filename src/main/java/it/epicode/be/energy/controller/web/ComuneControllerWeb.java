@@ -38,7 +38,6 @@ public class ComuneControllerWeb {
 		log.info("Test elenco comuni su pagina Thymeleaf");
 		ModelAndView view = new ModelAndView("elencocomuni"); //nome html
 		view.addObject("listaComuni",comuneService.findAll());
-		//model.addAttribute("listaStudenti", studenteService.findAll());
 		return view;
 	}
 
