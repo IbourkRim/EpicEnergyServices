@@ -12,7 +12,7 @@ autenticazione:
           user, user (abilitato alle sole operazioni di lettura)
  o registrarsi con username, email, password e specificare il ruolo come admin o user.
 
--inserimento il cliente-
+-inserimento del cliente-
 prima d'inserire un cliente bisogna inserire due indirizzi senza id:
 {
   "via": "via uitui",
@@ -27,9 +27,42 @@ prima d'inserire un cliente bisogna inserire due indirizzi senza id:
   }
 }
         
+-associare gli id dei due indirizzi all'inserimento del cliente.
+{
+
+  "ragioneSociale": "ghytj",
+  "tipoCliente": "SAS",
+  "partitaIva": 8965,
+  "email": "string",
+  "dataInserimento": "2002-03-16",
+  "dataUltimoContatto": "2022-03-16",
+  "fatturatoAnnuale": 2500,
+  "pec": "string",
+  "telefono": 0,
+  "emailContatto": "string",
+  "nomeContatto": "string",
+  "cognomeContatto": "string",
+  "telefonoContatto": 0,
+  "indirizzoSedeLegale": {
+    "id": 7257
+  },
+  "indirizzoSedeOperativa": {
+    "id": 7258
+  }
+} 
 
 
-
+-per inserire la fattura, associare l'id del cliente.
+{
+  "anno": 2001,
+  "data": "2022-03-16",
+  "importo": 0,
+  "numero": 0,
+  "statoFattura": "string",
+  "cliente": {
+    "id": 7257
+ }
+}
 
 
 
