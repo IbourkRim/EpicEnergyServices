@@ -10,5 +10,30 @@ Il progetto prevede inoltre un sistema di autenticazione e autorizzazione basato
 autenticazione:
   accedere tramite admin, admin
           user, user (abilitato alle sole operazioni di lettura)
- o registrarsi con username, email, password e specificare il ruolo come admin o user.      
+ o registrarsi con username, email, password e specificare il ruolo come admin o user.
+
+-inserimento il cliente-
+prima d'inserire un cliente bisogna inserire due indirizzi senza id:
+{
+  "via": "via uitui",
+  "civico": 20,
+  "localita": "yigy",
+  "cap": 8795,
+  "comune": {
+    "id": 113,
+    "provincia": {
+      "id": 97
+    }
+  }
+}
         
+
+
+
+
+
+
+
+
+
+
