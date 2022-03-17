@@ -1,5 +1,4 @@
-# EpicEnergyServices
- progetto finale
+
 Abbiamo realizzato il backend di un sistema CRM per un'azienda fornitrice di energia, denominata "EPIC ENERGY SERVICES", che vuole gestire i contatti con i propri clienti business.
 Il sistema basato su Web Service REST Spring Boot e database PostgreSQL , permette di gestire un elenco dei clienti.
 I comuni sono gestiti attraverso un'anagrafica centralizza e sono caratterizzati da un nome e da un riferimento ad una provincia, anch'essa gestita in anagrafica centralizzata e caratterizzata da un nome ed una sigla. 
@@ -64,6 +63,8 @@ prima d'inserire un cliente bisogna inserire due indirizzi senza id:
  }
 }
 
+-per accedere alla parte web-
+localhost:8080/web/epicenergy
 
 
 
