@@ -2,6 +2,7 @@ package it.epicode.be.energy.repository;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,4 +24,5 @@ public interface FatturaRepository extends JpaRepository<Fattura,Long>{
     Page<Optional<Fattura>> findByImporto(Pageable pageable, BigDecimal minimo , BigDecimal massimo);
 	
 	Page<Optional<Fattura>> findByClienteRagioneSociale(Pageable pageable, String ragioneSociale);
+
 }
