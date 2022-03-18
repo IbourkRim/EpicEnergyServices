@@ -5,7 +5,11 @@ I comuni sono gestiti attraverso un'anagrafica centralizza e sono caratterizzati
 Associato ad ogni cliente c'è un insieme di fatture ed ogni fattura ha uno stato. 
 Il progetto prevede inoltre un sistema di autenticazione e autorizzazione basato su token JWT che permetta a diversi utenti di accedere alle funzioni del backend e di registrarsi al sistema.
 
+
+
 -funzionalità del progetto-
+USARE SWAGGER O COLLECTION POSTMAN:
+
 autenticazione:
   accedere tramite admin, admin
           user, user (abilitato alle sole operazioni di lettura)
@@ -66,7 +70,8 @@ prima d'inserire un cliente bisogna inserire due indirizzi senza id:
 -per l'update cliente, stesse procedure dell'inserimento
 (aggiornare con indirizzi e fattura già esistenti)
 
--per accedere alla parte web-
+-accedere alla parte web-
+PER VISUALIZZARE ELENCO COMUNI E PROVINCE
 localhost:8080/web/epicenergy
 
 
